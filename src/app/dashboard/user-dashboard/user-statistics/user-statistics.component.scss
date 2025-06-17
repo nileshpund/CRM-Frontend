@@ -1,0 +1,471 @@
+@import "./../../../../assets/styles/variables";
+
+.dashboard-slider {
+    height: 200px;
+
+    .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.dashboard-card {
+    height: 150px;
+    width: 45%;
+    margin: 10px 0;
+    text-align: center;
+    color: $white;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    ion-card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .card-count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #ff3d00;
+        color: #fff;
+        padding: 4px 12px;
+        border-bottom-left-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+
+    .card-icon {
+        font-size: 32px;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+
+    .view-btn {
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        padding: 6px 12px;
+        border-radius: 20px;
+        color: $white;
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+}
+
+// Different color classes
+.blue {
+    background: linear-gradient(to right, #2196f3, #0b79d0);
+}
+
+.yellow {
+    background: linear-gradient(to right, #ffca28, #fbc02d);
+}
+
+.green {
+    background: linear-gradient(to right, #4caf50, #388e3c);
+}
+
+.red {
+    background: linear-gradient(to right, #e53935, #b71c1c);
+}
+
+.carousel-slider {
+    height: 220px;
+    margin: 16px;
+
+    .carousel-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* swiper.component.scss */
+.swiper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+
+    .swiper-slide {
+        width: 100% !important;
+        /* force slide width to fill container */
+        padding: 0 !important;
+        /* remove padding */
+        margin: 0 !important;
+        /* remove margin */
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img.carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px; // adjust vertical position if needed
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+
+    .swiper-pagination-bullet {
+        background: $white;
+        opacity: 0.6;
+        margin: 0 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: #2196f3; // active bullet color
+    }
+}
+
+.swiper-pagination {
+    bottom: 10px !important;
+}
+
+.slide-0 {
+    background: url('/assets/images/slide1.jpg') center/cover no-repeat;
+}
+
+.slide-1 {
+    background: url('/assets/images/slide2.jpg') center/cover no-repeat;
+}
+
+.slide-2 {
+    background: url('/assets/images/slide3.jpg') center/cover no-repeat;
+}
+
+.hero {
+    //   background: url('/assets/images/slide2.jpg') center/cover no-repeat;
+    min-height: 40vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .box-caption {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: $white;
+        padding: 1rem;
+
+        h1 {
+            color: #{$primary};
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0.5rem 0;
+        }
+    }
+
+    .caption-bg {
+        // background: rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 1s ease-in-out;
+}
+
+.box-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.box-tile {
+    width: 120px;
+    height: 120px;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.explore-btn {
+    --background: #{$primary};
+    --color: white; // Optional, sets text color
+}
+
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero {
+    transition: background 1s ease-in-out;
+    animation: fadeInHero 1s ease-in-out;
+}
+
+.timeline {
+    position: relative;
+    margin: 40px 0;
+    padding: 0;
+
+    // timeline vertical line
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        background: #ccc;
+        z-index: 0; // Push behind the timeline items
+    }
+
+    .timeline-item {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+        width: 100%;
+        z-index: 1; // Ensures card sits above the line
+
+        &.left {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        &.right {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin: 0 10px;
+            z-index: 2; // Above line
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            max-width: 320px;
+            z-index: 2; // Above line
+        }
+    }
+}
+
+.modern-chatbox {
+    position: fixed;
+    bottom: 80px;
+    right: 16px;
+    width: 340px;
+    height: 450px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-bubble {
+    max-width: 80%;
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    word-wrap: break-word;
+    display: inline-block;
+    width: fit-content;
+}
+
+.chat-bubble.user {
+    display: block;
+    align-self: flex-end;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 16px 16px 0 16px;
+
+    .msg-time {
+        font-size: 0.7em;
+        color: #fff;
+        margin-top: 2px;
+        align-self: flex-end;
+    }
+}
+
+.chat-bubble.other {
+    display: block;
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    color: #000000;
+    border-radius: 16px 16px 16px 0;
+
+    .msg-time {
+        font-size: 0.7em;
+        color: #666;
+        margin-top: 2px;
+        align-self: flex-end;
+    }
+}
+
+.sender-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.message-text {
+    line-height: 1.4;
+}
+
+.chat-input-wrapper {
+    display: flex;
+    padding: 8px;
+    background: #ffffff;
+    border-top: 1px solid #ccc;
+    gap: 8px;
+}
+
+.chat-input-wrapper ion-input {
+    flex: 1;
+}
+
+.status-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1rem;
+    gap: 10px;
+}
+
+.status-card {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px;
+  flex: 1 1 calc(50% - 16px);
+  max-width: calc(50% - 16px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.status-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.status-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.status-title {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.status-count {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2196f3;
+    /* blue highlight */
+}

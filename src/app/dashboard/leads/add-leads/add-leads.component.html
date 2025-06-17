@@ -1,0 +1,119 @@
+<ion-content fullscreen class="add-property-page">
+  <!-- Background Image - half page -->
+
+  <!-- Form Card - bottom half -->
+  <div class="form-card">
+    <form [formGroup]="propertyForm">
+
+      <div class="form-group">
+        <label>First Visit</label>
+        <select formControlName="firstVisit">
+          <option value="">Select Visit Type</option>
+          <option value="Site Visit">Site Visit</option>
+          <option value="Revisit">Revisit</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Site Visit Date</label>
+        <input formControlName="siteVisitDate" type="date" />
+      </div>
+
+      <div class="form-group">
+        <label>Contact Name</label>
+        <input formControlName="contactName" type="text" placeholder="Enter Contact Name" />
+      </div>
+
+      <div class="form-group">
+        <label>Contact</label>
+        <input formControlName="contact" type="tel" placeholder="Enter Contact Number" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" type="email" placeholder="Enter Email" />
+      </div>
+
+      <div class="form-group">
+        <label>Nationality</label>
+        <input formControlName="nationality" type="text" placeholder="Enter Nationality" />
+      </div>
+
+      <div class="form-group">
+        <label>Age Group</label>
+        <input formControlName="ageGroup" type="text" placeholder="Enter Age Group" />
+      </div>
+
+      <div class="form-group">
+        <label>Ethnicity</label>
+        <input formControlName="ethnicity" type="text" placeholder="Enter Ethnicity" />
+      </div>
+
+      <div class="form-group">
+        <label>Employment Type</label>
+        <input formControlName="employmentType" type="text" placeholder="Enter Employment Type" />
+      </div>
+
+      <div class="form-group">
+        <label>Company Name</label>
+        <input formControlName="companyName" type="text" placeholder="Enter Company Name" />
+      </div>
+
+      <div class="form-group">
+        <label>Office Locality</label>
+        <input formControlName="officeLocality" type="text" placeholder="Enter Office Locality" />
+      </div>
+
+      <div class="form-group">
+        <label>Pincode</label>
+        <input formControlName="pincode" type="text" placeholder="Enter Pincode" />
+      </div>
+
+      <div class="form-group">
+        <label>Industry</label>
+        <input formControlName="industry" type="text" placeholder="Enter Industry" />
+      </div>
+
+      <div class="form-group">
+        <label>Address</label>
+        <input formControlName="address1" type="text" placeholder="Enter Address" />
+      </div>
+
+      <div class="form-group">
+        <label>Locality</label>
+        <input formControlName="locality" type="text" placeholder="Enter Locality" />
+      </div>
+
+      <div class="form-group">
+        <label>Unit Type</label>
+        <input formControlName="unitType" type="text" placeholder="Enter Unit Type" />
+      </div>
+
+      <div class="form-group">
+        <label>Budget</label>
+        <input formControlName="budget" type="text" placeholder="Enter Budget" />
+      </div>
+
+      <div class="form-group">
+        <label>Area (Sq Ft)</label>
+        <input formControlName="areaSqFeet" type="text" placeholder="Enter Area in Sq Ft" />
+      </div>
+
+      <div class="form-group">
+        <label>Construction Status</label>
+        <input formControlName="constructionStatus" type="text" placeholder="Enter Construction Status" />
+      </div>
+
+      <div class="form-group">
+        <label>Seeking For</label>
+        <input formControlName="seekingFor" type="text" placeholder="Enter Purpose (e.g., Buy, Rent)" />
+      </div>
+
+      <ion-button (click)="submitForm()" expand="block" type="submit" [disabled]="propertyForm.invalid">
+        Submit
+      </ion-button>
+
+    </form>
+  </div>
+
+</ion-content>

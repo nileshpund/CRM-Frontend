@@ -1,0 +1,71 @@
+<div fullscreen class="hero-content">
+  <div class="hero" [ngClass]="'slide-' + currentSlide">
+    <div class="box-slider">
+      <div class="box-caption animate-fade-up">
+        <div class="caption-bg">
+          <h1>{{ slideTexts[currentSlide].title }}</h1>
+          <p class="subTitle">{{ slideTexts[currentSlide].subtitle }}</p>
+          <p>{{ slideTexts[currentSlide].subsubtitle }}</p>
+          <!-- <p>{{ slideTexts[currentSlide].description }}</p> -->
+          <ion-button routerLink="../properties" class="explore-btn" expand="block">Explore Products</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-container">
+  <ion-card *ngFor="let item of dashboardCards" [ngClass]="item.color" class="dashboard-card"
+    (click)="onCardClick(item)">
+    <ion-card-content>
+      <span class="card-count">{{ item.count }}</span>
+      <ion-icon [name]="item.icon" class="card-icon"></ion-icon>
+      <h3>{{ item.label }}</h3>
+      <button class="view-btn">View Details</button>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div class="status-cards">
+  <div class="status-card" *ngFor="let item of statusList">
+    <div class="status-title">{{ item.name }}</div>
+    <div class="status-count">{{ item.count }}</div>
+  </div>
+</div>
+
+
+<!-- <div class="chat-icon-fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin: 16px;">
+    <ion-fab-button (click)="toggleChat()">
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div> -->
+
+
+<div class="modern-chatbox" *ngIf="showChat">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Chat</ion-title>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" (click)="toggleChat()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="chat-messages">
+    <div *ngFor="let msg of messages" [class]="msg.isUser ? 'chat-bubble user' : 'chat-bubble other'">
+      <div *ngIf="!msg.isUser" class="sender-name">{{ msg.name }}</div>
+      <div class="message-text">{{ msg.text }}</div>
+      <div class="msg-time">{{ msg.timestamp | date:'shortTime' }}</div>
+    </div>
+  </ion-content>
+
+  <div class="chat-input-wrapper">
+    <ion-input [value]="inputMsg" (ionInput)="inputMsg = $any($event.target).value" placeholder="Type a message"
+      (keyup.enter)="sendMessage()"></ion-input>
+    <ion-button fill="solid" (click)="sendMessage()">Send</ion-button>
+  </div>
+</div>

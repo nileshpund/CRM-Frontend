@@ -1,0 +1,69 @@
+<ion-content fullscreen class="property-page">
+
+  <div class="no-side-padding modern-bg" [class.blurred]="showFilterSheet">
+    <div class="page-header">
+      <h1 class="page-title">Leads</h1>
+      <ion-icon name="filter" class="filter-icon" (click)="showFilterSheet = true"></ion-icon>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tab-buttons">
+      <button
+        *ngFor="let tab of ['New', 'Hot', 'Untouched', 'Closed', 'Booked', 'Pending', 'Re-visit Scheduled', 'Final Negotiation']"
+        [class.active]="selectedTab === tab" (click)="selectTab(tab)">
+        {{ tab }}
+      </button>
+    </div>
+
+    <!-- Filtered Users -->
+    <div *ngFor="let user of filteredUsers" class="property-card">
+      <div class="user-id">#1212BD</div>
+
+      <div class="property-header">
+        <div class="user-name">{{ user.name }}</div>
+        <div class="assigned-to">Assigned: {{ user.salesExecName }}</div>
+      </div>
+
+      <div class="property-details">
+        <div class="location">{{ user.propertyLocation }}</div>
+        <div class="timestamp">{{ user.timeStamp }}</div>
+      </div>
+
+      <div class="description">
+        {{ user.description }}
+      </div>
+
+      <div class="icon-actions">
+        <ion-icon name="logo-whatsapp" class="action-icon whatsapp"></ion-icon>
+        <ion-icon name="call" class="action-icon call"></ion-icon>
+        <!-- Removed email icon as per your request -->
+      </div>
+    </div>
+
+  </div>
+
+  <div class="overlay" *ngIf="showFilterSheet" (click)="showFilterSheet = false"></div>
+
+  <div class="bottom-sheet" *ngIf="showFilterSheet">
+    <div class="sheet-content">
+      <div class="sheet-header">
+        <h3>Filter by Designation</h3>
+        <ion-icon name="close" (click)="showFilterSheet = false"></ion-icon>
+      </div>
+
+      <ion-list>
+        <ion-item *ngFor="let option of designationOptions">
+          <ion-label (click)="setFilter()">{{ option }}</ion-label>
+          <!-- <ion-checkbox slot="end" [(ngModel)]="selectedOptions[option]"></ion-checkbox> -->
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openUploadOptionsSheet()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;" multiple>
+</ion-content>

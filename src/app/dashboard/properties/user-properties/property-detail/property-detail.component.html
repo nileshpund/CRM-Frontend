@@ -1,0 +1,42 @@
+<div class="property-details-page">
+
+  <!-- Background Image -->
+  <div class="property-bg">
+    <img [src]="property.image" alt="Property">
+  </div>
+
+  <!-- Floating Details Card -->
+  <div class="property-card">
+    <div class="header-section">
+      <div class="card-title">{{ property.title }}</div>
+      <div class="card-subtitle">{{ property.subtitle }}</div>
+      <div class="card-row">
+        <div class="price">{{ property.priceRange }}</div>
+        <div class="status">{{ property.status }}</div>
+      </div>
+      <div class="rating">
+        <ion-icon *ngFor="let i of [1,2,3,4,5]; let idx = index"
+                  [name]="idx < property.rating ? 'star' : 'star-outline'">
+        </ion-icon>
+      </div>
+    </div>
+
+    <!-- <ion-divider class="divider"></ion-divider> -->
+
+    <!-- Detailed Info -->
+    <div class="info-section">
+      <p class="label">Address</p>
+      <p class="value">{{ property.address }}</p>
+
+      <p class="label">Description</p>
+      <p class="value">{{ property.description }}</p>
+
+      <p class="label">Amenities</p>
+      <ul class="amenities">
+        <li *ngFor="let item of property.amenities">{{ item }}</li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>

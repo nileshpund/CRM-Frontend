@@ -1,0 +1,56 @@
+<ion-header [translucent]="true" *ngIf="showHeader">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-title>Dashboard</ion-title> -->
+    <ion-buttons slot="end" large (click)="goToCart()">
+      <ion-icon class="h-icon" name="mail-sharp"></ion-icon>
+    </ion-buttons>
+    <ion-buttons class="notification" slot="end" large (click)="goToNotification()">
+      <ion-icon class="h-icon" name="notifications-sharp"></ion-icon>
+      <ion-badge class="notification-badge" *ngIf="notificationCount > 0" color="danger" (click)="goToNotification()"
+        [ngClass]="{'active': notificationCount > 99}">
+        <span>{{notificationCount > 99 ? '99+':notificationCount}}</span>
+      </ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+    <router-outlet></router-outlet>
+</ion-content>
+
+<ion-footer slot="fixed">
+  <ion-toolbar>
+    <div class="tab-buttons">
+      <ion-button expand="block" fill="clear" (click)="navigateTo('')" class="grey-button">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" (click)="navigateTo('search')" class="grey-button">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="clear"
+        (click)="navigateTo('/dashboard/user-statistics')"
+        class="grey-button center-button"
+        [class.active]="activeTab === '/dashboard/shop'">
+        <ion-icon slot="icon-only" name="apps-outline"></ion-icon>
+      </ion-button>
+
+
+      <ion-button expand="block" fill="clear" (click)="navigateTo('cart')" class="grey-button">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" (click)="navigateTo('dashboard/user/profile')" class="grey-button">
+        <ion-icon slot="icon-only" name="person-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

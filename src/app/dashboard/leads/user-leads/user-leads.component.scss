@@ -1,0 +1,306 @@
+.no-side-padding {
+  --padding-start: 0;
+  --padding-end: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.modern-bg {
+  background: #f0f2f5;
+}
+
+.user-section {
+  margin: 12px 0;
+  padding: 20px;
+  background-color: #fff;
+  // border-radius: 16px;
+  position: relative;
+
+  /* Soft 3D shadow */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-section:hover {
+  transform: translateY(-2px);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #ff5e8d, #ff2e63);
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  font-weight: 500;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(255, 46, 99, 0.4);
+}
+
+.user-info h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: #2d2d2d;
+}
+
+.designation {
+  font-size: 14px;
+  color: #757575;
+}
+
+.contact-details {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+
+  div {
+    padding-bottom: 5px;
+  }
+}
+
+.contact-details ion-icon {
+  margin-right: 6px;
+  color: #555;
+}
+
+.icon-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 16px;
+}
+
+.action-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 8px;
+  border-radius: 50%;
+  background: #f1f1f1;
+}
+
+.action-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.action-icon.whatsapp {
+  color: #25d366;
+}
+
+.action-icon.email {
+  color: #1a73e8;
+}
+
+.action-icon.call {
+  color: #0a66c2;
+}
+
+.tab-buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  overflow-x: auto;
+  white-space: nowrap; 
+   -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  button {
+    border: none;
+    background: none;
+    font-weight: bold;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    &.active {
+      background: #0a66c2;
+      color: white;
+    }
+  }
+}
+
+.filter-button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: #0a66c2;
+  padding: 12px;
+  color: white;
+  border-radius: 50%;
+  font-size: 22px;
+  z-index: 999;
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 1000;
+   padding-bottom: 70px;
+
+  .sheet-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .sheet-header{
+      h3{
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.page-title {
+  font-size: 19px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.filter-icon {
+  font-size: 24px;
+  color: #2196f3;
+  /* or your theme color */
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-icon:hover {
+  color: #1976d2;
+}
+
+.blurred {
+  filter: blur(1px);
+  transition: filter 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 999; // Below bottom sheet
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 60vh;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sheet-content {
+  // padding: 1rem;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.property-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.property-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.badge {
+  background: #23D;  /* Your blue color */
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+.user-id {
+  margin: 0px 10px 10px 0px;
+}
+.user-name {
+  flex: 1;
+  margin: 0 0.0rem;
+}
+
+.assigned-to {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.property-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.icon-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-icon {
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 80px; /* Adjust to stay above footer buttons */
+  right: 20px;
+  background-color: var(--ion-color-primary, #3880ff);
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  z-index: 9999;  /* Very high so it stays on top */
+  font-size: 24px;
+}

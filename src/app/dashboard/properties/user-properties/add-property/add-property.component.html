@@ -1,0 +1,63 @@
+<ion-content fullscreen class="add-property-page">
+  <!-- Background Image - half page -->
+
+  <!-- Form Card - bottom half -->
+  <div class="form-card">
+    <form [formGroup]="propertyForm" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label>Title</label>
+        <input formControlName="title" type="text" placeholder="Enter Title" />
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea formControlName="description" rows="3" placeholder="Enter Description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Flat Type</label>
+        <select formControlName="flatType">
+          <option value="">Select Flat Type</option>
+          <option *ngFor="let type of flatTypes" [value]="type">{{type}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Furnished Type</label>
+        <select formControlName="furnishedType">
+          <option value="">Select Furnished Type</option>
+          <option *ngFor="let furnished of furnishedTypes" [value]="furnished">{{furnished}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Flat Image</label>
+        <input type="file" (change)="onImageSelected($event)" accept="image/*" />
+      </div>
+
+      <div class="form-group">
+        <label>Location</label>
+        <input formControlName="location" type="text" placeholder="Enter Location" />
+      </div>
+
+      <div class="form-group">
+        <label>Price Range</label>
+        <input formControlName="priceRange" type="text" placeholder="Enter Price Range" />
+      </div>
+
+      <div class="form-group">
+        <label>Status</label>
+        <select formControlName="status">
+          <option value="">Select Status</option>
+          <option value="available">Available</option>
+          <option value="sold">Sold</option>
+          <option value="reserved">Reserved</option>
+        </select>
+      </div>
+
+      <ion-button expand="block" type="submit" [disabled]="propertyForm.invalid">
+        Submit
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

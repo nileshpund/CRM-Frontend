@@ -1,0 +1,34 @@
+<ion-content fullscreen class="property-page">
+  <div class="tab-buttons">
+    <button *ngFor="let tab of ['All', 'Available', 'Upcoming', 'Sold']" [class.active]="selectedTab === tab"
+      (click)="selectTab(tab)">
+      {{ tab }}
+    </button>
+  </div>
+  <div *ngFor="let property of filteredUsers" class="property-wrapper" (click)="goToDetails()">
+
+    <div class="property-bg">
+      <img [src]="property.image" alt="Property">
+    </div>
+
+    <div class="property-card">
+      <div class="share-icon" (click)="shareProperty($event,property); $event.stopPropagation()">
+      <ion-icon name="share-social-outline"></ion-icon>
+    </div>
+      <div class="card-title">{{ property.title }}</div>
+      <div class="card-subtitle">{{ property.subtitle }}</div>
+
+      <div class="card-row">
+        <div class="price">{{ property.priceRange }}</div>
+        <div class="status">{{ property.status }}</div>
+      </div>
+    </div>
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addProperty()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
